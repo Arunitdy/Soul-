@@ -185,11 +185,13 @@ body {
     top: 10px;
 }
 
-.closebutton:hover {
+.closebutton,
+.send_button:hover {
     transform: scale(0.7);
 }
 
-.closebutton:active {
+.closebutton,
+.send_button:active {
     transform: scale(1.3);
 }
 
