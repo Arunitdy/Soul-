@@ -208,11 +208,11 @@ body {
     }
 
     .yes {
-        right: calc(50% + 40px);
+        right: calc(50% + 20px);
     }
 
     .No {
-        right: calc(50% - 40px);
+        right: calc(50% - 60px);
     }
 
     .poem {
