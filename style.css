@@ -205,8 +205,12 @@ body {
         width:10%;
         bottom: 30%;
         right: 15%;
+        
+        top: 70%;
     }
-
+    .answer{
+        top: 60%;
+    }
     .yes {
         right: calc(50% + 20px);
     }
