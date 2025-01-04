@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(228, 247, 251);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.peachTree {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.charters {
+    width: 40%;
+    max-width: 300px;
+    height: auto;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    z-index: 2;
+}
+
+.poem {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    margin: 20% auto 0;
+    padding: 20px;
+    font-family: "Nothing You Could Do", cursive;
+    font-size: clamp(16px, 2.5vw, 24px);
+    text-align: center;
+    z-index: 3;
+    border-radius: 10px;
+}
+
+.poem-line {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 768px) {
+    .peachTree {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    .charters {
+        width: 60%;
+        bottom: 2%;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .poem {
+        margin-top: 10%;
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .poem {
+        margin-top: 5%;
+        padding: 15px;
+    }
+
+    .charters {
+        width: 80%;
+    }
+}
