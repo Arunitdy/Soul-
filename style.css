@@ -8,9 +8,9 @@ body {
 }
 
 .peachTree {
-    width: 100%;
+    width: 99%;
     max-width: 600px;
-    height: auto;
+    height: 99%;
     position: absolute;
     left: 0;
     top: 0;
@@ -26,23 +26,60 @@ body {
     right: 5%;
     z-index: 2;
 }
-
+.shadow {
+    width: 100%;
+    height: 5%;
+    background: rgba(0, 0, 0, 0.5); 
+    filter: blur(15px); 
+    z-index: -1;
+    border-radius: 100px;
+  }
+  .butterflies{
+    width:5%;
+    height: 6%;
+    bottom: 35%;
+    right: 12%;
+    z-index: 91;
+  }
 .poem {
-    position: relative;
+    position: absolute;
     width: 90%;
-    max-width: 600px;
-    margin: 20% auto 0;
+    max-width: 900px;
     padding: 20px;
-    font-family: "Nothing You Could Do", cursive;
+    font-family: "Nothing You Could Do",cursive ;
     font-size: clamp(16px, 2.5vw, 24px);
     text-align: center;
     z-index: 3;
     border-radius: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
 }
 
 .poem-line {
+    visibility: hidden;
     margin: 10px 0;
+    white-space: pre;
     line-height: 1.5;
+}
+
+.visible-char {
+    visibility: visible;
+    display: inline-block;
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: black;
+    margin-left: 2px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
 }
 
 @media screen and (max-width: 768px) {
@@ -60,14 +97,21 @@ body {
     }
 
     .poem {
-        margin-top: 10%;
         width: 85%;
+        top: 40%;
     }
+    
+  .butterflies{
+    width:19%;
+    height: 8%;
+    bottom: 30%;
+    right: 50%;
+    z-index: 91;
+  }
 }
 
 @media screen and (max-width: 480px) {
     .poem {
-        margin-top: 5%;
         padding: 15px;
     }
 
