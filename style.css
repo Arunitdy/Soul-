@@ -224,6 +224,24 @@ body {
 
 /* Mobile Devices */
 @media screen and (max-width: 480px) {
+    .mail {
+        width: 90%; /* Full width on mobile devices */
+        max-width: 350px; /* Reduces the width on small devices */
+    }
+
+    .mailBox {
+        max-width: 330px; /* Reduced max-width for a better fit on mobile */
+        height: 160px; /* Slightly smaller height */
+    }
+
+    .send_button {
+        font-size: 14px; /* Scaling down font size */
+        padding: 8px 14px; /* Smaller padding for mobile */
+    }
+
+    .closebutton {
+        font-size: 20px; /* Smaller close button */
+    }
     .butterflies {
         width: 15%;
         bottom: 25%;
@@ -267,5 +285,23 @@ body {
     .yes, .No {
         padding: 3px 12px;
         font-size: 14px;
+    }
+    .mail {
+        width: 90%;
+        max-width: 300px; /* Further reduce size for smaller screens */
+    }
+
+    .mailBox {
+        max-width: 290px; /* Further reduce max-width for very small screens */
+        height: 140px; /* Even smaller height for very small screens */
+    }
+
+    .send_button {
+        font-size: 12px; /* Smaller font size */
+        padding: 6px 12px; /* Smaller padding */
+    }
+
+    .closebutton {
+        font-size: 18px; /* Even smaller close button */
     }
 }
