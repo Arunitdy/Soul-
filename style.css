@@ -49,9 +49,9 @@ body {
     bottom: 35%;
     right: 12%;
     z-index: 91;
-    min-width: 30px;
+    min-width: 30px; /* ensures butterflies aren't too small */
+    max-width: 100px; /* Optional: limits maximum size */
 }
-
 .poem {
     position: absolute;
     width: 90%;
@@ -67,7 +67,12 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
+    word-wrap: break-word; /* Ensures the text breaks and wraps within the container */
+    overflow-wrap: break-word; /* For browsers that support it */
+    white-space: normal; /* Ensures text doesn't overflow in a single line */
+    line-height: 1.5; /* Adjust line height to avoid overflow */
 }
+
 
 .poem-line {
     visibility: hidden;
@@ -197,7 +202,7 @@ body {
 /* Tablet Devices */
 @media screen and (max-width: 768px) {
     .butterflies {
-        width: 10%;
+        width:10%;
         bottom: 30%;
         right: 15%;
     }
@@ -213,6 +218,7 @@ body {
     .poem {
         width: 85%;
         padding: 15px;
+        font-size: clamp(14px, 3.5vw, 20px);  /* Scaling down font size for tablets */
     }
 }
 
@@ -233,6 +239,7 @@ body {
     .poem {
         font-size: clamp(14px, 4vw, 18px);
         padding: 10px;
+        width: 90%; /* Ensures that the poem takes a little less space on mobile */
     }
 
     .yes, .No {
@@ -250,6 +257,7 @@ body {
     .poem {
         width: 95%;
         font-size: 14px;
+        padding: 8px;
     }
 
     .butterflies {
