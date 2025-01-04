@@ -5,16 +5,20 @@ body {
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .peachTree {
-    width: 90%;
-    max-width: 6000px;
-    height: 99%;
+    width: 100%;
+    height: 100vh;
     position: absolute;
     left: 0;
     top: 0;
     z-index: 1;
+    object-fit: cover;
+    max-width: none;
 }
 
 .charters {
@@ -26,27 +30,34 @@ body {
     right: 5%;
     z-index: 2;
 }
+
 .shadow {
     width: 100%;
     height: 5%;
-    background: rgba(0, 0, 0, 0.5); 
-    filter: blur(15px); 
+    background: rgba(0, 0, 0, 0.5);
+    filter: blur(15px);
     z-index: -1;
     border-radius: 100px;
-  }
-  .butterflies{
-    width:5%;
-    height: 6%;
+    position: absolute;
+    bottom: -2%;
+}
+
+.butterflies {
+    width: 5%;
+    height: auto;
+    position: absolute;
     bottom: 35%;
     right: 12%;
     z-index: 91;
-  }
+    min-width: 30px;
+}
+
 .poem {
     position: absolute;
     width: 90%;
     max-width: 900px;
     padding: 20px;
-    font-family: "Nothing You Could Do",cursive ;
+    font-family: "Nothing You Could Do", cursive;
     font-size: clamp(16px, 2.5vw, 24px);
     text-align: center;
     color: rgb(66, 66, 66);
@@ -78,104 +89,139 @@ body {
     margin-left: 2px;
     animation: blink 0.7s infinite;
 }
-@keyframes blink {
-    50% { opacity: 0; }
-}
-.answer{
+
+.answer {
     position: absolute;
-    padding: 4px 20px ;
-    right: 60%;
-    top:60%;
-    margin: 10%;
-    width: auto;
-    font-size: 20px;
+    padding: 4px 20px;
+    font-size: clamp(16px, 2vw, 20px);
     font-weight: bold;
     background-color: rgb(234, 145, 199);
     border-radius: 15px;
-    font-family: "Nothing You Could Do",cursive ;
+    font-family: "Nothing You Could Do", cursive;
     z-index: 100;
     cursor: pointer;
     color: rgb(66, 66, 66);
+    transition: transform 0.3s ease;
 }
-.answer:active{
-    transform: scale(1.1);
-}
-.yes{
+
+.yes {
+    right: calc(50% + 60px);
+    top: calc(50% + 150px);
     background: linear-gradient(to right, rgb(247, 134, 202), rgb(255, 255, 255));
     border: 2px solid rgb(203, 198, 198);
     z-index: 101;
 }
-.yes:hover{
-    background: rgb(255, 255, 255);
-}
-.No{
-    right: 40%;
-    padding: 7px 20px ;
+
+.No {
+    right: calc(50% - 60px);
+    top: calc(50% + 150px);
+    padding: 7px 20px;
     border: 2px solid rgb(203, 198, 198);
     background-color: rgb(255, 255, 255);
 }
-.No:hover{
-    background: linear-gradient(to right, rgb(247, 134, 202), rgb(255, 255, 255));
-    border: 2px solid rgb(203, 198, 198);
-}
-.closebutton{
-    background:none ;
-    border: none;
-    font-size: 26px;
-    margin-left: 380px;
-    color: rgb(130, 127, 130);
-    cursor:pointer;
-}
-.closebutton:hover{
-    transform:scale(0.7);
-}
-.closebutton:active{
-    transform:scale(1.3);
-}
-.mail{
-    position: absolute;
-    width: 400px;
-    background-color: red;
-    top:40%;
-    right:20%;
-    padding: 10px 20px 10px 13px ;
-    border:3px solid rgb(255, 255, 255) ;
-    background: linear-gradient(rgb(255, 255, 255),rgb(241, 148, 196));
-    border-radius: 25px;
-    z-index: 1000;
-    box-shadow:1px 10px 30px rgba(0, 0, 0, 0.9);
-}
-.mailBox{
-    width:400px;
-    border-radius: 15px;
-    font-family: "Nothing You Could Do",cursive ;
-    height: 200px;
-    border: 2px solid wheat;
-}
-.mailBox::placeholder {
-    top: 10%;
-}
-.send_button{
-    background: linear-gradient(rgb(255, 255, 255),rgb(255, 89, 175));
-    border-radius: 15px;
-    padding: 10px 20px;
-    border:2px solid rgb(255, 255, 255) ;
-    margin: 10px 10px 10px 320px;
-    box-shadow:6px 4px 20px rgba(255, 255, 255, 0.9);
-}
-.send_button:hover{
-    background: rgb(230, 214, 225);
-    
+
+.yes:hover {
+    background: rgb(255, 255, 255);
 }
 
-.send_button:active{
+.No:hover {
+    background: linear-gradient(to right, rgb(247, 134, 202), rgb(255, 255, 255));
+}
+
+.answer:active {
+    transform: scale(1.1);
+}
+
+.mail {
+    position: fixed;
+    width: 90%;
+    max-width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    border: 3px solid rgb(255, 255, 255);
+    background: linear-gradient(rgb(255, 255, 255), rgb(241, 148, 196));
+    border-radius: 25px;
+    z-index: 1000;
+    box-shadow: 1px 10px 30px rgba(0, 0, 0, 0.9);
+}
+
+.mailBox {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    font-family: "Nothing You Could Do", cursive;
+    height: 200px;
+    border: 2px solid wheat;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.send_button {
+    background: linear-gradient(rgb(255, 255, 255), rgb(255, 89, 175));
+    border-radius: 15px;
+    padding: 10px 20px;
+    border: 2px solid rgb(255, 255, 255);
+    margin: 10px 0 10px auto;
+    display: block;
+    box-shadow: 6px 4px 20px rgba(255, 255, 255, 0.9);
+    transition: transform 0.3s ease;
+}
+
+.closebutton {
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: rgb(130, 127, 130);
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    transition: transform 0.3s ease;
+}
+
+.closebutton:hover {
+    transform: scale(0.7);
+}
+
+.closebutton:active {
     transform: scale(1.3);
 }
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Tablet Devices */
 @media screen and (max-width: 768px) {
-    .peachTree {
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
+    .butterflies {
+        width: 10%;
+        bottom: 30%;
+        right: 15%;
+    }
+
+    .yes {
+        right: calc(50% + 40px);
+    }
+
+    .No {
+        right: calc(50% - 40px);
+    }
+
+    .poem {
+        width: 85%;
+        padding: 15px;
+    }
+}
+
+/* Mobile Devices */
+@media screen and (max-width: 480px) {
+    .butterflies {
+        width: 15%;
+        bottom: 25%;
     }
 
     .charters {
@@ -186,43 +232,33 @@ body {
     }
 
     .poem {
-        width: 85%;
-        top: 40%;
-    }
-    
-    .butterflies{
-        width:19%;
-        height: 8%;
-        bottom: 30%;
-        right: 50%;
-        z-index: 91;
-    }
-    .answer{
-        position: absolute;
-        padding: 4px 20px ;
-        right: 40%;
-        top:53%;
-        margin: 10%;
-        width: auto;
-        font-size: 18px;
-        border-radius: 15px;
-        font-family: "Nothing You Could Do",cursive ;
-        z-index: 100;
-        cursor: pointer;
-        color: rgb(66, 66, 66);
+        font-size: clamp(14px, 4vw, 18px);
+        padding: 10px;
     }
 
-    .No{
-        right: 25%;
+    .yes, .No {
+        padding: 4px 15px;
+        top: calc(50% + 120px);
+    }
+
+    .answer {
+        font-size: 16px;
     }
 }
 
-@media screen and (max-width: 480px) {
+/* Very Small Devices */
+@media screen and (max-width: 320px) {
     .poem {
-        padding: 15px;
+        width: 95%;
+        font-size: 14px;
     }
 
-    .charters {
-        width: 80%;
+    .butterflies {
+        width: 20%;
+    }
+
+    .yes, .No {
+        padding: 3px 12px;
+        font-size: 14px;
     }
 }
