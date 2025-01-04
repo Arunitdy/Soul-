@@ -212,11 +212,11 @@ body {
         top: 60%;
     }
     .yes {
-        right: calc(50% + 20px);
+        right: calc(50% );
     }
 
     .No {
-        right: calc(50% - 60px);
+        right: calc(50% - 80px);
     }
 
     .poem {
