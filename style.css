@@ -78,10 +78,13 @@ body {
     margin-left: 2px;
     animation: blink 0.7s infinite;
 }
+@keyframes blink {
+    50% { opacity: 0; }
+}
 .answer{
     position: absolute;
     padding: 4px 20px ;
-    right: 50%;
+    right: 60%;
     top:60%;
     margin: 10%;
     width: auto;
@@ -106,8 +109,8 @@ body {
     background: rgb(255, 255, 255);
 }
 .No{
-    right: 60%;
-    top:70%;
+    right: 40%;
+    padding: 7px 20px ;
     border: 2px solid rgb(203, 198, 198);
     background-color: rgb(255, 255, 255);
 }
@@ -115,10 +118,59 @@ body {
     background: linear-gradient(to right, rgb(247, 134, 202), rgb(255, 255, 255));
     border: 2px solid rgb(203, 198, 198);
 }
-@keyframes blink {
-    50% { opacity: 0; }
+.closebutton{
+    background:none ;
+    border: none;
+    font-size: 26px;
+    margin-left: 380px;
+    color: rgb(130, 127, 130);
+    cursor:pointer;
+}
+.closebutton:hover{
+    transform:scale(0.7);
+}
+.closebutton:active{
+    transform:scale(1.3);
+}
+.mail{
+    position: absolute;
+    width: 400px;
+    background-color: red;
+    top:40%;
+    right:20%;
+    padding: 10px 20px 10px 13px ;
+    border:3px solid rgb(255, 255, 255) ;
+    background: linear-gradient(rgb(255, 255, 255),rgb(241, 148, 196));
+    border-radius: 25px;
+    z-index: 1000;
+    box-shadow:1px 10px 30px rgba(0, 0, 0, 0.9);
+}
+.mailBox{
+    width:400px;
+    border-radius: 15px;
+    font-family: "Nothing You Could Do",cursive ;
+    height: 200px;
+    border: 2px solid wheat;
+}
+.mailBox::placeholder {
+    top: 10%;
+}
+.send_button{
+    background: linear-gradient(rgb(255, 255, 255),rgb(255, 89, 175));
+    border-radius: 15px;
+    padding: 10px 20px;
+    border:2px solid rgb(255, 255, 255) ;
+    margin: 10px 10px 10px 320px;
+    box-shadow:6px 4px 20px rgba(255, 255, 255, 0.9);
+}
+.send_button:hover{
+    background: rgb(230, 214, 225);
+    
 }
 
+.send_button:active{
+    transform: scale(1.3);
+}
 @media screen and (max-width: 768px) {
     .peachTree {
         width: 100%;
@@ -138,13 +190,31 @@ body {
         top: 40%;
     }
     
-  .butterflies{
-    width:19%;
-    height: 8%;
-    bottom: 30%;
-    right: 50%;
-    z-index: 91;
-  }
+    .butterflies{
+        width:19%;
+        height: 8%;
+        bottom: 30%;
+        right: 50%;
+        z-index: 91;
+    }
+    .answer{
+        position: absolute;
+        padding: 4px 20px ;
+        right: 40%;
+        top:53%;
+        margin: 10%;
+        width: auto;
+        font-size: 18px;
+        border-radius: 15px;
+        font-family: "Nothing You Could Do",cursive ;
+        z-index: 100;
+        cursor: pointer;
+        color: rgb(66, 66, 66);
+    }
+
+    .No{
+        right: 25%;
+    }
 }
 
 @media screen and (max-width: 480px) {

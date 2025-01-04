@@ -1,3 +1,6 @@
+
+//line rendering
+
 function typeWriter() {
     const lines = document.querySelectorAll('.poem-line');
     let lineIndex = 0;
@@ -25,11 +28,11 @@ function typeWriter() {
                 span.className = 'visible-char';
                 currentLine.appendChild(span);
                 charIndex++;
-                setTimeout(typeChar, 50); // Speed of typing
+                setTimeout(typeChar, 50);
             } else {
                 charIndex = 0;
                 lineIndex++;
-                setTimeout(typeLine, 500); // Delay between lines
+                setTimeout(typeLine, 500); 
             }
         }
         
@@ -38,6 +41,58 @@ function typeWriter() {
     
     typeLine();
 }
-
-// Start the animation when page loads
 window.addEventListener('load', typeWriter);
+
+//Yes or No
+
+document.querySelectorAll(".answer").forEach(item=>{
+    item.addEventListener('click',response);
+});
+function response(event){
+    const result = event.target.innerHTML;
+    console.log(result);
+    if(result.includes("yes")){
+       console.log('maile');
+
+       // Create a new div for the mail section
+       const mailDiv = document.createElement("div");
+       mailDiv.classList.add("mail");
+
+       // Create and append the close button
+       const closeButton = document.createElement("button");
+       closeButton.classList.add("closebutton");
+       closeButton.innerHTML = "&times;";
+       closeButton.onclick = closeMail;
+       mailDiv.appendChild(closeButton);
+
+       // Create and append the input box
+       const mailInput = document.createElement("input");
+       mailInput.classList.add("mailBox");
+       mailInput.type = "text";
+       mailInput.placeholder = "Do you have anything for your boyfriend?";
+       mailDiv.appendChild(mailInput);
+
+       // Create and append the send button
+       const sendButton = document.createElement("button");
+       sendButton.classList.add("send_button");
+       sendButton.innerHTML = "Send";
+       sendButton.onclick = mailSend;
+       mailDiv.appendChild(sendButton);
+
+       // Append the newly created mail div to the body
+       document.body.insertBefore(mailDiv, document.body.firstChild); // Insert at the start
+
+    }
+}
+
+// close mail function
+function closeMail(){
+    const mailDiv = document.querySelector(".mail");
+    mailDiv.remove();  // Remove the mail div from the DOM
+    console.log("Mail section closed");
+ }
+ 
+// mail send function
+function mailSend(){
+   console.log("mailSend");
+}
