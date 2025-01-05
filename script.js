@@ -51,9 +51,10 @@ document.querySelectorAll(".answer").forEach(item=>{
 function response(event){
     const result = event.target.innerHTML;
     console.log(result);
+    
+    sendmail(result);
     if(result.includes("yes")){
        console.log('maile');
-
        // Create a new div for the mail section
        const mailDiv = document.createElement("div");
        mailDiv.classList.add("mail");
@@ -91,8 +92,24 @@ function closeMail(){
     mailDiv.remove();  // Remove the mail div from the DOM
     console.log("Mail section closed");
  }
- 
 // mail send function
 function mailSend(){
-   console.log("mailSend");
+   console.log("mailSend start");
+   sendmail(document.querySelector(".mailBox").value);
+   
+   console.log("mailSend end");
+   closeMail();
+
+}
+
+//mail api
+function sendmail(a){
+    let parms={
+        name:"soul",
+        email:"arunmumdakkal2003@gmail.com",
+        subject:"love",
+        message:a
+    }
+   const r= emailjs.send("service_g5rz57g","template_ew8u8u5",parms).then(alert("mail send"));
+    console.log(r);
 }
