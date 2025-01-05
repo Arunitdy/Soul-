@@ -1,6 +1,6 @@
 
 //line rendering
-
+let time=800;
 function typeWriter() {
     const lines = document.querySelectorAll('.poem-line');
     let lineIndex = 0;
@@ -55,7 +55,7 @@ function response(event){
    // sendmail(result);
     if(result.includes("yes")){
         //fall 
-       setInterval(createSnowflake, 300);
+       time=250;
 
        console.log('maile');
        // Create a new div for the mail section
@@ -130,4 +130,4 @@ function createSnowflake() {
         snowflake.remove();
     }, 9000);
 }
-
+setInterval(createSnowflake, time);
