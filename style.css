@@ -111,7 +111,7 @@ body {
 
 .yes {
     right: calc(50% + 60px);
-    top: calc(50% + 150px);
+    top: calc(64% + 150px);
     background: linear-gradient(to right, rgb(247, 134, 202), rgb(255, 255, 255));
     border: 2px solid rgb(203, 198, 198);
     z-index: 101;
@@ -119,10 +119,14 @@ body {
 
 .No {
     right: calc(50% - 60px);
-    top: calc(50% + 150px);
+    top: calc(64% + 150px);
     padding: 7px 20px;
     border: 2px solid rgb(203, 198, 198);
     background-color: rgb(255, 255, 255);
+    width: 60px; 
+    height: 44px;
+    padding: 0; 
+    box-sizing: border-box;
 }
 
 .yes:hover {
