@@ -52,8 +52,11 @@ function response(event){
     const result = event.target.innerHTML;
     console.log(result);
     
-    sendmail(result);
+   // sendmail(result);
     if(result.includes("yes")){
+        //fall 
+       setInterval(createSnowflake, 300);
+
        console.log('maile');
        // Create a new div for the mail section
        const mailDiv = document.createElement("div");
@@ -113,3 +116,18 @@ function sendmail(a){
    const r= emailjs.send("service_g5rz57g","template_ew8u8u5",parms).then(alert("mail send"));
     console.log(r);
 }
+
+//rain
+function createSnowflake() {
+    const snowflake = document.createElement('div');
+    snowflake.classList.add('snow');
+    snowflake.style.left = Math.random() * 100 + 'vw';
+    snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+    snowflake.innerHTML ="🩷";
+    document.body.appendChild(snowflake);
+    
+    setTimeout(() => {
+        snowflake.remove();
+    }, 5000);
+}
+

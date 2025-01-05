@@ -200,6 +200,28 @@ body {
         opacity: 0;
     }
 }
+/* rain*/
+.snow {
+    color: white;
+    font-size: 20px;
+    position: fixed;
+    top: -20px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    pointer-events: none;
+    animation: fall-rotate 5s linear forwards;
+}
+
+@keyframes fall-rotate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+
 
 /* Tablet Devices */
 @media screen and (max-width: 768px) {
@@ -226,6 +248,11 @@ body {
         width: 85%;
         padding: 15px;
         font-size: clamp(14px, 3.5vw, 20px);  /* Scaling down font size for tablets */
+    }
+    
+    .snow {
+        color: white;
+        font-size: 9px;
     }
 }
 
@@ -275,7 +302,8 @@ body {
     .answer {
         font-size: 16px;
     }
-}
+        
+ }
 
 /* Very Small Devices */
 @media screen and (max-width: 320px) {
