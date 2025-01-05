@@ -144,10 +144,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 10px 20px;
-    border: 3px solid rgb(255, 255, 255);
-    background: linear-gradient(rgb(255, 255, 255), rgb(241, 148, 196));
-    border-radius: 25px;
+    padding: 10px 10px;
+    border: 2px solid rgb(255, 255, 255);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
     z-index: 1000;
     box-shadow: 1px 10px 30px rgba(0, 0, 0, 0.9);
 }
@@ -155,7 +155,7 @@ body {
 .mailBox {
     width: 100%;
     max-width: 400px;
-    border-radius: 15px;
+    border-radius: 10px;
     font-family: "Nothing You Could Do", cursive;
     height: 200px;
     border: 2px solid wheat;
@@ -167,7 +167,7 @@ body {
     background: linear-gradient(rgb(255, 255, 255), rgb(255, 89, 175));
     border-radius: 15px;
     padding: 10px 20px;
-    border: 2px solid rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
     margin: 10px 0 10px auto;
     display: block;
     box-shadow: 6px 4px 20px rgba(255, 255, 255, 0.9);
@@ -177,11 +177,11 @@ body {
 .closebutton {
     background: none;
     border: none;
-    font-size: 26px;
+    font-size: 20px;
     color: rgb(130, 127, 130);
     cursor: pointer;
     position: absolute;
-    right: 20px;
+    right: 10px;
     top: 10px;
 }
 
