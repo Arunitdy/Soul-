@@ -169,6 +169,7 @@ body {
     padding: 10px 20px;
     border: 1px solid rgb(255, 255, 255);
     margin: 10px 0 10px auto;
+    font-family: "Nothing You Could Do", cursive;
     display: block;
     box-shadow: 6px 4px 20px rgba(255, 255, 255, 0.9);
     transition: transform 0.3s ease;
