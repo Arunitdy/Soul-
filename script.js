@@ -122,12 +122,12 @@ function createSnowflake() {
     const snowflake = document.createElement('div');
     snowflake.classList.add('snow');
     snowflake.style.left = Math.random() * 100 + 'vw';
-    snowflake.style.animationDuration = Math.random() * 3 + 5 + 's';
+    snowflake.style.animationDuration = Math.random() * 3 + 6 + 's';
     snowflake.innerHTML ="🩷";
     document.body.appendChild(snowflake);
     
     setTimeout(() => {
         snowflake.remove();
-    }, 5000);
+    }, 9000);
 }
 
