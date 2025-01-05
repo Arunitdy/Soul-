@@ -222,7 +222,7 @@ body {
     }
 
     .poem {
-        top:20%;
+        top:40%;
         width: 85%;
         padding: 15px;
         font-size: clamp(14px, 3.5vw, 20px);  /* Scaling down font size for tablets */
