@@ -1,6 +1,6 @@
 
 //line rendering
-let time=800;
+let time=3000;
 function typeWriter() {
     const lines = document.querySelectorAll('.poem-line');
     let lineIndex = 0;
