@@ -2,7 +2,9 @@
 <img src="gui.png" alt="gui img"/>
 
 
-link:<a href="">click</a>
+
+ web link:<a href="https://soul-xi.vercel.app/">click</a>
+ 
 
 
 
