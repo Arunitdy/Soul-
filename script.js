@@ -123,7 +123,7 @@ function createSnowflake() {
     snowflake.classList.add('snow');
     snowflake.style.left = Math.random() * 100 + 'vw';
     snowflake.style.animationDuration = Math.random() * 3 + 6 + 's';
-    snowflake.innerHTML ="🩷";
+    snowflake.innerHTML = "🩷";
     document.body.appendChild(snowflake);
     
     setTimeout(() => {

@@ -15,5 +15,5 @@ me the incredible honor of sharing the rest of our chapters together,
 
 hand in hand, as husband and wife?"
 
-<img src="butterflies.gif" alt="butterflies" class="charters butterflies"/>
-<img src="gui.png" alt="gui img"/>
+<img src="./img/butterflies.gif" alt="butterflies" class="charters butterflies"/>
+<img src="./img/gui.png" alt="gui img"/>
