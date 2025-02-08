@@ -23,4 +23,4 @@ me the incredible honor of sharing the rest of our chapters together,
 hand in hand, as husband and wife?"
 
 
-<img src="butterflies.gif" alt="butterflies" class="charters butterflies"/>
+<img src="butterflies.gif" alt="butterflies" target="_blank" class="charters butterflies"/>
