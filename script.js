@@ -55,7 +55,7 @@ function response(event){
    // sendmail(result);
     if(result.includes("yes")){
         //fall 
-       setInterval(createSnowflake, 300);
+       setInterval(createSnowflake, 250);
 
        console.log('maile');
        // Create a new div for the mail section
@@ -130,4 +130,22 @@ function createSnowflake() {
         snowflake.remove();
     }, 9000);
 }
+setInterval(createSnowflake, 3500);
 
+//button random move
+const button = document.querySelector('.No');
+
+button.addEventListener('mouseenter', () => {
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    // Calculate random positions within boundaries
+    const randomLeft = Math.random() * (viewportWidth - button.offsetWidth);
+    const randomTop = Math.random() * (viewportHeight - button.offsetHeight);
+
+    console.log(randomLeft, randomTop);
+
+    // Apply random positions
+    button.style.top = `${randomTop}px`;
+    button.style.left = `${randomLeft}px`;
+});
