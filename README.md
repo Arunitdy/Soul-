@@ -3,7 +3,8 @@
 
 
 
- <a  href="https://soul-xi.vercel.app/" target="_blank"> web link </a>
+<a href="https://soul-xi.vercel.app/" target="_blank" rel="noopener noreferrer">web link</a>
+
 
 
 
