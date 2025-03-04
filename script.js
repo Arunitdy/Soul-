@@ -1,4 +1,4 @@
-
+console.log("script");
 //line rendering
 
 function typeWriter() {
