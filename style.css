@@ -22,6 +22,7 @@ body {
     border:none;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .line{
@@ -30,7 +31,27 @@ body {
     margin: 3px;
     background-color: rgb(175, 173, 173);
 }
-
+.menu:hover{
+    .line{
+        background-color: rgb(255, 255, 255);
+    }
+}
+.menu:active{
+    transform: scale(1.1);
+}
+.menuDiv{
+    display: none;
+    position: absolute;
+    width: 100px;
+    height: 200px;
+    top: 1vw;
+    left: 1vw;
+    background: rgb(255, 255, 255);
+    border-radius: 1vw;
+    padding: 1vw;
+    z-index: 99;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 .peachTree {
     width: 100%;
     height: 100vh;
