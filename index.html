@@ -20,12 +20,29 @@
     <title>Soul</title>
 </head>
 <body>
-    <button class = "menu">
+    <button class="menu" onclick="toggleMenu()">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
     </button>
-    <div class="m"></div>
+    
+    <div id="menu" class="sliding-menu menu-closed">
+        <div class="menu-content">
+            <h2 class="menu-title">
+            Menu
+                <button  class="menu-toggle-button-close close " onclick="toggleMenu()" >
+                    <div class="close-icon">&times;</div>
+                </button>
+            </h2>
+            <ul class="menu-list">
+                <li><a href="https://github.com/Arunitdy/TinkerHub/blob/main/normal/index.css"><button class="menu-item">Profile</button></a></li>
+                <li><a href="#"><button class="menu-item"></button>Settings</button></a></li>
+                <li><a href="#"><button class="menu-item login"></button>Login</button></a></li>
+            </ul>
+            <hr class="menu-divider">
+        </div>
+    </div>
+
     <img class="peachTree" alt="peachTree" src="./img/peachTree.png">
     <div>
         <img src="./img/butterflies.gif" alt="butterflies" class="charters butterflies"/>
