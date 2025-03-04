@@ -65,7 +65,7 @@ function response(event){
        // Create and append the close button
        const closeButton = document.createElement("button");
        closeButton.classList.add("closebutton");
-       closeButton.innerHTML = "&times;";
+       closeButton.innerHTML = "&times";
        closeButton.onclick = closeMail;
        mailDiv.appendChild(closeButton);
 
@@ -92,9 +92,10 @@ function response(event){
 // close mail function
 function closeMail(){
     const mailDiv = document.querySelector(".mail");
-    mailDiv.remove();  // Remove the mail div from the DOM
+    mailDiv.remove(); 
     console.log("Mail section closed");
  }
+
 // mail send function
 function mailSend(){
    console.log("mailSend start");
@@ -113,12 +114,14 @@ function sendmail(a){
         subject:"love",
         message:a
     }
-   const r= emailjs.send("service_g5rz57g","template_ew8u8u5",parms).then(alert("mail send"));
+
+   const r = emailjs.send("service_g5rz57g","template_ew8u8u5",parms).then(alert("mail send"));
     console.log(r);
 }
 
 //rain
 function createSnowflake() {
+
     const snowflake = document.createElement('div');
     snowflake.classList.add('snow');
     snowflake.style.left = Math.random() * 100 + 'vw';
@@ -133,19 +136,19 @@ function createSnowflake() {
 setInterval(createSnowflake, 3500);
 
 //button random move
-const button = document.querySelector('.No');
+const buttonNo = document.querySelector('.No');
 
-button.addEventListener('mouseenter', () => {
+buttonNo.addEventListener('mouseenter', () => {
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
 
     // Calculate random positions within boundaries
-    const randomLeft = Math.random() * (viewportWidth - button.offsetWidth);
-    const randomTop = Math.random() * (viewportHeight - button.offsetHeight);
+    const randomLeft = Math.random() * (viewportWidth - buttonNo.offsetWidth);
+    const randomTop = Math.random() * (viewportHeight - buttonNo.offsetHeight);
 
     console.log(randomLeft, randomTop);
 
     // Apply random positions
-    button.style.top = `${randomTop}px`;
-    button.style.left = `${randomLeft}px`;
+    buttonNo.style.top = `${randomTop}px`;
+    buttonNo.style.left = `${randomLeft}px`;
 });
