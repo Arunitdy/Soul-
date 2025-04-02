@@ -25,7 +25,7 @@ window.addEventListener("load", async function () {
   console.log("📌 Device Info:", details);
 
   try {
-    await window.db.collection("soul").add(details);
+    await window.db.collection("soul1").add(details);
     console.log("✅ Device info added to Firestore");
   } catch (error) {
     console.error("❌ Error adding device info:", error);
