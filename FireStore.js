@@ -18,7 +18,7 @@ window.addEventListener("load", async function () {
     screenWidth: window.screen.width,
     screenHeight: window.screen.height,
     language: navigator.language,
-    isMobile: isMobile ? "Mobile Device" : "Desktop Device",
+    isMobile: isMobile ? "Mobile Device" : "Desktop Device" + " soul",
     timestamp: new Date().toISOString(),
   };
 
@@ -28,6 +28,6 @@ window.addEventListener("load", async function () {
     await window.db.collection("soul1").add(details);
     console.log("✅ Device info added to Firestore");
   } catch (error) {
-    console.error("❌ Error adding device info:", error);
+    console.error("❌ Error adding device  info:", error);
   }
 });
