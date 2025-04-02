@@ -1,9 +1,7 @@
-import { db, collection, addDoc } from "./firebase/firebaseConfig"; 
+let hasRun = false;
 
-let hasRun = false; // ✅ Prevent multiple executions
-
-async function getDeviceDetails() {
-  if (hasRun) return; // ✅ Prevent second execution
+window.addEventListener("load", async function () {
+  if (hasRun) return;
   hasRun = true;
 
   const isMobile = /Mobi|Android/i.test(navigator.userAgent);
@@ -14,18 +12,20 @@ async function getDeviceDetails() {
     screenHeight: window.screen.height,
     language: navigator.language,
     isMobile: isMobile ? "Mobile Device" : "Desktop Device",
-    timestamp: new Date().toISOString(), // Store timestamp
+    timestamp: new Date().toISOString(),
   };
 
   console.log("Device Info:", details);
 
+  if (!window.db) {
+    console.error("❌ Firebase Firestore is not initialized!");
+    return;
+  }
+
   try {
-    await addDoc(collection(db, "soul"), details);
+    await window.db.collection("portfolio").add(details);
     console.log("✅ Device info added to Firestore");
   } catch (error) {
     console.error("❌ Error adding device info:", error);
   }
-}
-
-// Call the function when the page loads
-window.addEventListener("load", getDeviceDetails);
+});
