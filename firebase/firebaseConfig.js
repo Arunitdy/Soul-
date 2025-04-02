@@ -12,5 +12,6 @@ const firebaseConfig = {
 // ✅ Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-// ✅ Initialize Firestore and make it globally accessible
+// ✅ Initialize Firestore
 window.db = firebase.firestore();
+console.log("🔥 Firestore initialized:", window.db);

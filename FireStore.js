@@ -1,8 +1,15 @@
-let hasRun = false;
-
 window.addEventListener("load", async function () {
-  if (hasRun) return;
-  hasRun = true;
+  if (!window.db) {
+    console.error("❌ Firebase Firestore is not initialized! Waiting...");
+    
+    // Wait for Firebase to initialize
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    if (!window.db) {
+      console.error("❌ Firestore still not initialized!");
+      return;
+    }
+  }
 
   const isMobile = /Mobi|Android/i.test(navigator.userAgent);
   const details = {
@@ -15,15 +22,10 @@ window.addEventListener("load", async function () {
     timestamp: new Date().toISOString(),
   };
 
-  console.log("Device Info:", details);
-
-  if (!window.db) {
-    console.error("❌ Firebase Firestore is not initialized!");
-    return;
-  }
+  console.log("📌 Device Info:", details);
 
   try {
-    await window.db.collection("portfolio").add(details);
+    await window.db.collection("soul").add(details);
     console.log("✅ Device info added to Firestore");
   } catch (error) {
     console.error("❌ Error adding device info:", error);
