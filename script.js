@@ -52,7 +52,7 @@ function response(event){
     const result = event.target.innerHTML;
     console.log(result);
     
-   // sendmail(result);
+   sendmail(result);
     if(result.includes("yes")){
         //fall 
        setInterval(createSnowflake, 250);
