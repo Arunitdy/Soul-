@@ -115,7 +115,7 @@ function sendmail(a){
         message:a
     }
 
-   const r = emailjs.send("service_g5rz57g","template_ew8u8u5",parms).then(alert("mail send"));
+   const r = emailjs.send("service_g5rz57g","template_ew8u8u5",parms).then(console.log("mail send"));
     console.log(r);
 }
 
