@@ -122,12 +122,12 @@ body {
     transition: background-color 0.3s;
     border-radius: 6px;
 }
-.code a{
-    color:red;
-}
 .menu-item,a{
     text-decoration: none;
     color: #6f5a5a;
+}
+.code, a{
+    color:red;
 }
 .menu-item:hover {
     background-color: #f4f4f4;
