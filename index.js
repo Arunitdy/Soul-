@@ -6,7 +6,7 @@ const saveBtnText = document.getElementById("saveBtnText");
 const saveBtnSpinner = document.getElementById("saveBtnSpinner");
 
 // Alert for sample code
-alert("Try '0000' as sample code");
+alert("Try '1111' as sample code");
 
 // Auto-fill secret code input if stored
 window.addEventListener("load", () => {
