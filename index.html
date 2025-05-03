@@ -13,7 +13,11 @@
             <div class="secret-code-container">
                 <h2>Enter Secret Code</h2>
                 <input type="password" id="secretCodeInput" placeholder="Enter code..." />
-                <button onclick="verifyCode()" name = "enter">Enter</button>
+                    
+                <button id="saveBtn" onclick="verifyCode()">
+                    <span id="saveBtnText">Enter</span>
+                    <span id="saveBtnSpinner" class="spinner" style="display: none;"></span>
+                </button>
                 <p id="errorMsg" class="error"></p>
                 <hr style="margin: 20px 0;">
                 <p>Don't have a code?</p>

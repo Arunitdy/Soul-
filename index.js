@@ -11,7 +11,10 @@ alert("try '0000' as sample code");
         return;
       }
     }
-
+    
+    saveBtn.disabled = true;
+    saveBtnText.textContent = "Processing";
+    saveBtnSpinner.style.display = "inline-block";
     try {
       const querySnapshot = await window.db.collection("secretCodes")
         .where("secretCode", "==", input)
@@ -25,6 +28,11 @@ alert("try '0000' as sample code");
     } catch (error) {
       console.error("❌ Error verifying code:", error);
       errorMsg.textContent = "Something went wrong. Try again.";
+    } finally {
+      
+      saveBtn.disabled = false;
+      saveBtnText.textContent = "Enter";
+      saveBtnSpinner.style.display = "none";
     }
   }
 
