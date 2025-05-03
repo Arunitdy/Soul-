@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/svg+xml" href="./img/butterfly.png" />
+  <title>Find Your Secret Code</title>
+  <link rel="stylesheet" href="code.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Retrieve Secret Code</h2>
+    <input type="email" id="emailInput" placeholder="Enter your email" />
+    <button onclick="getSecretCode()">Find Code</button>
+    <button onclick="goBack()" class="backBtn">Back</button>
+    <p id="resultMsg"></p>
+  </div>
+
+  <!-- Firebase scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <script src="../firebase/firebaseConfig.js"></script>
+  <script src="code.js"></script>
+</body>
+</html>

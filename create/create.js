@@ -2,7 +2,7 @@ const db = firebase.firestore();
 
 async function createSecretCode() {
     const [yourName, soulmateName, newSecretCode, email] =
-        ["yourName", "soulmateName", "newSecretCode", "email"]
+        ["yourName", "soulmateName", "newSecretCode", "newemail"]
             .map(id => document.getElementById(id).value.trim());
 
     const statusMsg = document.getElementById("statusMsg");
