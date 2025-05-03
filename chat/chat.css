@@ -1,20 +1,24 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Nothing You Could Do", cursive;
     text-align: center;
-    padding: 20px;
+    color: #706e6e;
   }
   
   #chatHeader {
     font-size: 24px;
     margin-bottom: 20px;
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    padding-bottom: 10px;
+    padding-left:2% ;
   }
-  
   #chatBox {
-    height: 400px;
+    height: auto;
     width: 100%;
-    border: 1px solid #ccc;
     padding: 10px;
     overflow-y: scroll;
+    border-top: #706e6e solid 2px;
   }
   
   .message {
@@ -44,15 +48,15 @@ body {
     font-size: 16px;
   }
   
-  button {
+  .send {
     padding: 10px;
     margin-top: 10px;
     font-size: 16px;
     cursor: pointer;
   }
   
-  button:hover {
-    background-color: #007bff;
+  .send:hover {
+    background-color: #ff00d4;
     color: white;
   }
   
@@ -74,11 +78,42 @@ body {
     border-radius: 10px;
     text-align: center;
   }
-  
-  button {
-    margin: 10px;
+  .modal-content button {
+    
+    background: linear-gradient(rgb(255, 255, 255), rgb(255, 89, 175));
+    border-radius: 15px;
     padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+    border: 1px solid rgb(168, 165, 165);
+    font-family: "Nothing You Could Do", cursive;
+    box-shadow: 6px 4px 20px rgba(255, 255, 255, 0.9);
+    transition: transform 0.3s ease;
+  }
+  .messageInput ,.send{
+    border-radius: 10px;
+    border: 1px solid rgb(110, 107, 107);
+  }
+  .send{
+    background: linear-gradient(rgb(255, 255, 255), rgb(255, 89, 175));
+    border: 1px solid rgb(168, 165, 165);
+    font-family: "Nothing You Could Do", cursive;
+    color: white;
+    box-shadow: 6px 4px 20px rgba(255, 255, 255, 0.9);
+    transition: transform 0.3s ease;
+   
+  }
+  .send:hover{
+    background-color: #ffffff;
+    color: rgb(118, 117, 117);
   }
   
+  
+.messageInputContainer {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+  }
