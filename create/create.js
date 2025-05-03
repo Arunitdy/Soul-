@@ -9,7 +9,8 @@ async function createSecretCode() {
     if (!statusMsg) {
         console.error("❌ Element with id='statusMsg' not found!");
         return;
-      }
+    }
+
     const saveBtn = document.getElementById("saveBtn");
     const saveBtnText = document.getElementById("saveBtnText");
     const saveBtnSpinner = document.getElementById("saveBtnSpinner");
@@ -27,7 +28,7 @@ async function createSecretCode() {
     statusMsg.textContent = "";
 
     try {
-        // Check for duplicates
+        // Check for duplicate secret code
         const snapshot = await db.collection("secretCodes")
             .where("secretCode", "==", newSecretCode)
             .get();
@@ -36,10 +37,18 @@ async function createSecretCode() {
             statusMsg.textContent = "⚠️ Secret code already exists.";
             statusMsg.style.color = "orange";
         } else {
+            // Save to secretCodes (auto-generated ID)
             await db.collection("secretCodes").add({
                 yourName,
                 soulmateName,
                 secretCode: newSecretCode
+            });
+
+            // Also create a document in "chat" collection with secret code as ID
+            await db.collection("chat").doc(newSecretCode).set({
+                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                participants: [yourName, soulmateName],
+                messages: [] // optional: start with empty message array
             });
 
             statusMsg.textContent = "✅ Secret code saved successfully!";
@@ -49,13 +58,11 @@ async function createSecretCode() {
         statusMsg.textContent = "❌ Error: " + error.message;
         statusMsg.style.color = "red";
     } finally {
-        // Reset button state
         saveBtn.disabled = false;
         saveBtnText.textContent = "Save Code";
         saveBtnSpinner.style.display = "none";
     }
 }
-
 
 function goBack() {
     window.location.href = ".././index.html";

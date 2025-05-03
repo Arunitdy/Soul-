@@ -1,4 +1,3 @@
-
 const db = firebase.firestore();
 
 // Elements for button text and spinner
@@ -8,6 +7,14 @@ const saveBtnSpinner = document.getElementById("saveBtnSpinner");
 
 // Alert for sample code
 alert("Try '0000' as sample code");
+
+// Auto-fill secret code input if stored
+window.addEventListener("load", () => {
+    const storedCode = localStorage.getItem("secretCode");
+    if (storedCode) {
+        document.getElementById("secretCodeInput").value = storedCode;
+    }
+});
 
 async function verifyCode() {
     const input = document.getElementById("secretCodeInput").value.trim();
@@ -22,19 +29,20 @@ async function verifyCode() {
         }
     }
 
-    // Disable the button and show the spinner while processing
+    // Disable button and show spinner
     saveBtn.disabled = true;
-    saveBtnText.textContent = "Processing";
+    saveBtnText.textContent = "Processing...";
     saveBtnSpinner.style.display = "inline-block";
-    
+
     try {
-        // Query Firestore for the secret code
         const querySnapshot = await window.db.collection("secretCodes")
             .where("secretCode", "==", input)
             .get();
 
         if (!querySnapshot.empty) {
-            window.location.href = "Home.html"; // Redirect if match found
+            // Store the successful code
+            localStorage.setItem("secretCode", input);
+            window.location.href = "Home.html";
         } else {
             errorMsg.textContent = "Incorrect code. Please try again.";
         }
@@ -42,7 +50,7 @@ async function verifyCode() {
         console.error("❌ Error verifying code:", error);
         errorMsg.textContent = "Something went wrong. Try again.";
     } finally {
-        // Re-enable the button and reset its state
+        // Restore button state
         saveBtn.disabled = false;
         saveBtnText.textContent = "Enter";
         saveBtnSpinner.style.display = "none";
