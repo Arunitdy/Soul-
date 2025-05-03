@@ -1,4 +1,4 @@
-
+alert("try '0000' as sample code");
   async function verifyCode() {
     const input = document.getElementById("secretCodeInput").value.trim();
     const errorMsg = document.getElementById("errorMsg");
