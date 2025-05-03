@@ -1,78 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-     (function(){
-      emailjs.init({
-        publicKey: "v1NuNxKifUW2QtRAC",
-       });
-      })();
-    </script>
-
-    <link rel="icon" type="image/svg+xml" href="./img/butterfly.png" />
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nothing+You+Could+Do" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soul</title>
-</head>
-<body>
-    <button class="menu" onclick="toggleMenu()">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-    </button>
-    
-    <div id="menu" class="sliding-menu menu-closed">
-        <div class="menu-content">
-            <h2 class="menu-title">
-            Menu
-                <button  class="menu-toggle-button-close close " onclick="toggleMenu()" >
-                    <div class="close-icon">&times;</div>
-                </button>
-            </h2>
-            <ul class="menu-list">
-                <li><a href="#"><button class="menu-item">Profile</button></a></li>
-                <li><a href="#"><button class="menu-item">Settings</button></a></li>
-                <li><a href="#"><button class="menu-item login">Login</button></a></li>
-                <li><a href="https://github.com/Arunitdy/Soul"><button class="menu-item code">Code</button></a></li>
-            </ul>
-            <hr class="menu-divider">
-        </div>
-    </div>
-
-    <img class="peachTree" alt="peachTree" src="./img/peachTree.png">
-    <div>
-        <img src="./img/butterflies.gif" alt="butterflies" class="charters butterflies"/>
-         <img class="charters" alt="characters" src="./img/characters.png">
-         <diV class="charters shadow"></diV>
-    </div>
-    <div class="poem">
-            <span class="poem-line">From the moment our eyes met, it was as if the</span>
-            <span class="poem-line"> stars aligned,weaving a tapestry of love so</span>
-            <span class="poem-line"> vibrant it illuminated my soul. Your laughter </span>
-            <span class="poem-line">is a melody that dances in my heart, your smile</span>
-            <span class="poem-line">the sunrise that chases away every shadow. With</span>
-            <span class="poem-line"> you, every day feels like a poem, every touch</span>
-            <span class="poem-line"> a whispered promise. So, my love, will you do</span>
-            <span class="poem-line">me the incredible honor of sharing the rest </span>
-            <span class="poem-line">of our chapters together,hand in hand,</span>
-            <span class="poem-line"> as husband and wife?</span>
-    </div>
-    <button class="yes answer">yes 💕</button>
-    <button class=" No answer">No</button>
-
-    
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/svg+xml" href="./img/butterfly.png" />
+        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="index.css"/>
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nothing+You+Could+Do" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Soul</title>
+    </head>
+    <body>
+            <div class="secret-code-container">
+                <h2>Enter Secret Code</h2>
+                <input type="password" id="secretCodeInput" placeholder="Enter code..." />
+                <button onclick="verifyCode()" name = "enter">Enter</button>
+                <p id="errorMsg" class="error"></p>
+        
+                <hr style="margin: 20px 0;">
+        
+                <p>Don't have a code?</p>
+                <button onclick="goToCreatePage()" name="createCode" >Create New Secret Code</button>
+            </div>
+    </body>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
     <script src="FireBase/firebaseConfig.js"></script>
     <script src="FireStore.js"></script>
-    <script src="menu.js"></script>
-    <script src="script.js"></script>
-
-
-</body>
+    <script src="index.js"></script>
 </html>

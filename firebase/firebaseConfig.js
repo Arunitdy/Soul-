@@ -14,4 +14,5 @@ firebase.initializeApp(firebaseConfig);
 
 // ✅ Initialize Firestore
 window.db = firebase.firestore();
+
 console.log("🔥 Firestore initialized:", window.db);

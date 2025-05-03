@@ -1,0 +1,40 @@
+.secret-code-container {
+    width: 300px;
+    margin: 150px auto;
+    padding: 20px;
+    background-color: #fefefe;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(110, 107, 107);
+    text-align: center;
+    font-family: 'Nothing You Could Do', cursive;
+  }
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color:  rgb(110, 107, 107);
+  }
+  .secret-code-container input {
+    width: 80%;
+    padding: 8px;
+    margin: 10px 0;
+    border: .3px solid rgb(110, 107, 107);
+    border-radius:10px ;
+    font-size: 16px;
+  }
+  
+  .secret-code-container button {
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius:10px ;
+    right: calc(50% + 60px);
+    top: calc(64% + 150px);
+    background: linear-gradient(to right, rgb(247, 134, 202), rgb(255, 255, 255));
+    border: 2px solid rgb(203, 198, 198);
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+  }
+  

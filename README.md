@@ -5,6 +5,8 @@
 
 <a href="https://soul-xi.vercel.app/" target="_blank" rel="noopener noreferrer">web link</a>
 
+<a href="" target="_blank" rel="noopener noreferrer">firebase</a>
+
 
 
 

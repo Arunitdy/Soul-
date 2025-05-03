@@ -152,3 +152,10 @@ buttonNo.addEventListener('mouseenter', () => {
     buttonNo.style.top = `${randomTop}px`;
     buttonNo.style.left = `${randomLeft}px`;
 });
+
+
+
+function goIndex() {
+    window.location.href = "index.html"; 
+}
+

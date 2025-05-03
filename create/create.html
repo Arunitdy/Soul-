@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href=".././img/butterfly.png" />
+    <link rel="stylesheet" href="../style.css"/>
+    <link rel="stylesheet" href="../index.css"/>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nothing+You+Could+Do" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Code</title>
+</head>
+<body>
+    <div class="secret-code-container">
+        <h2>Create a Secret Code</h2>
+        <input type="text" id="yourName" placeholder="Your Name" />
+        <input type="text" id="soulmateName" placeholder="Soulmate's Name" />
+        <input type="password" id="newSecretCode" placeholder="Create Secret Code" />
+        <button onclick="createSecretCode()">Save Code</button>
+        <p id="statusMsg"></p>
+
+        <hr style="margin: 20px 0;">
+        <button onclick="goBack()">Back to Code Entry</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="../FireBase/firebaseConfig.js"></script>
+
+    <script src="create.js"></script>
+</body>
+</html>
