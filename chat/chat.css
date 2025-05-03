@@ -112,6 +112,7 @@ body {
     gap: 10px;
     padding: 10px;
     border-top: 1px solid #ccc;
+    margin-top: auto;
     background-color: #fff;
     position: sticky;
     bottom: 0;
