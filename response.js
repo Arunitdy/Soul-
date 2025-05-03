@@ -1,30 +1,79 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const sendButton =document.querySelectorAll(".send_button");
-    const messageInput =document.querySelectorAll(".mailBox"); // adjust ID if different
+const db = firebase.firestore();
+const secretCode = localStorage.getItem("secretCode");
+
+if (!secretCode) {
+  alert("No secret code found. Redirecting...");
+  window.location.href = "index.html";
+}
+
+// Helper function to write the response
+function sendResponse(text, answer) {
+  answer = answer === "yes 💕" ? "She said YES 💖" : "They said no 💔";
+
+  db.collection("responses").doc(secretCode)
+    .set({
+      response: answer,
+      text: text
+    })
+    .then(() => {
+      alert(`Your response "${answer}" has been saved!`);
+      // Optionally redirect or disable buttons
+      document.querySelectorAll(".answer").forEach(btn => btn.disabled = true);
+    })
+    .catch((err) => {
+      console.error("Error saving response:", err);
+      alert("Something went wrong. Try again.");
+    });
+}
+
+
+function retrieveResponse(secretCode) {
+    db.collection("responses").doc(secretCode)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          const data = doc.data();
+          const response = data.response;
+          const text = data.text;
   
-    if (sendButton && messageInput) {
-      sendButton.addEventListener("click", () => {
-        const message = messageInput.value.trim();
-        if (message === "") return;
+          // Displaying the response and text in the UI
+          // Optionally, display the message if exists
+          if (text) {
+            showTemporaryResponse(response, text);
+            console.log( `Message: ${response}  ${text}`);
+          }
   
-        const secretCode = localStorage.getItem("secretCode");
-        if (!secretCode) {
-          alert("No secret code found. Redirecting...");
-          window.location.href = "index.html";
-          return;
+        } else {
+          alert("no response");
         }
-  
-        // Store the message in the same document in 'responses'
-        db.collection("responses").doc(secretCode).set(
-          { message: message },
-          { merge: true } // This ensures we don't overwrite "response" or "text"
-        ).then(() => {
-          console.log("Message saved!");
-          messageInput.value = ""; // Clear input box
-        }).catch(error => {
-          console.error("Error saving message:", error);
-        });
+      })
+      .catch((err) => {
+        console.error("Error retrieving response:", err);
       });
-    }
+  }
+  
+  // Call the retrieveResponse function when needed, e.g., on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    retrieveResponse( localStorage.getItem("secretCode"));
   });
+  function showTemporaryResponse(response, text) {
+    const container = document.createElement("div");
+    container.classList.add("custom-alert"); // for styling with response.css
+  
+    const responseParagraph = document.createElement("p");
+    responseParagraph.textContent = response;
+  
+    const textParagraph = document.createElement("p");
+    textParagraph.textContent = text;
+  
+    container.appendChild(responseParagraph);
+    container.appendChild(textParagraph);
+  
+    document.body.appendChild(container);
+  
+    // Remove after 3 seconds
+    setTimeout(() => {
+      container.remove();
+    }, 3000);
+  }
   

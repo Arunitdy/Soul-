@@ -100,7 +100,9 @@ function closeMail(){
 function mailSend(){
    console.log("mailSend start");
    sendmail(document.querySelector(".mailBox").value);
-   
+
+   sendResponse(document.querySelector(".mailBox").value, document.querySelector(".answer").textContent);
+    
    console.log("mailSend end");
    closeMail();
 
