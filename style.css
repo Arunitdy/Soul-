@@ -126,6 +126,9 @@ body {
     text-decoration: none;
     color: #6f5a5a;
 }
+.code, a{
+    color:#f54141;
+}
 .menu-item:hover {
     background-color: #f4f4f4;
 }
