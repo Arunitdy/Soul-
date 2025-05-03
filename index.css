@@ -1,6 +1,7 @@
-body {
+.butterflies1 {
   position: absolute;
-  top:10%;
+  top: 7%;
+  width: 10%;
 }
 .secret-code-container {
     width: 300px;
