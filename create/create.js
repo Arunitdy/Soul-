@@ -4,8 +4,9 @@ async function createSecretCode() {
     const yourName = document.getElementById("yourName").value.trim();
     const soulmateName = document.getElementById("soulmateName").value.trim();
     const newSecretCode = document.getElementById("newSecretCode").value.trim();
-
+    const email = document.getElementById("email").value.trim();
     const statusMsg = document.getElementById("statusMsg");
+
     if (!statusMsg) {
         console.error("❌ Element with id='statusMsg' not found!");
         return;
@@ -14,8 +15,8 @@ async function createSecretCode() {
     const saveBtn = document.getElementById("saveBtn");
     const saveBtnText = document.getElementById("saveBtnText");
     const saveBtnSpinner = document.getElementById("saveBtnSpinner");
-
-    if (!yourName || !soulmateName || !newSecretCode) {
+    
+    if (!yourName || !soulmateName || !newSecretCode || !email) {
         statusMsg.textContent = "Please fill in all fields.";
         statusMsg.style.color = "red";
         return;
@@ -32,9 +33,15 @@ async function createSecretCode() {
         const snapshot = await db.collection("secretCodes")
             .where("secretCode", "==", newSecretCode)
             .get();
-
+            
+        const emailSnapshot = await db.collection("secretCodes")
+            .where("email", "==", email)
+            .get();
         if (!snapshot.empty) {
             statusMsg.textContent = "⚠️ Secret code already exists.";
+            statusMsg.style.color = "orange";
+        }else if (!emailSnapshot.empty) {
+            statusMsg.textContent = "⚠️ Email already exists.";
             statusMsg.style.color = "orange";
         } else {
             // Save to secretCodes (auto-generated ID)
