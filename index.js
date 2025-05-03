@@ -1,4 +1,4 @@
-// Initialize Firestore if not already initialized
+
 const db = firebase.firestore();
 
 // Elements for button text and spinner
