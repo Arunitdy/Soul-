@@ -1,6 +1,6 @@
 body {
   position: absolute;
-  
+  top:10%;
 }
 .secret-code-container {
     width: 300px;
