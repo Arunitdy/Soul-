@@ -44,7 +44,7 @@ function retrieveResponse(secretCode) {
           }
   
         } else {
-          alert("no response");
+          showTemporaryResponse("no response", "");
         }
       })
       .catch((err) => {
