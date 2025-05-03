@@ -106,15 +106,15 @@ body {
     color: rgb(118, 117, 117);
   }
   
-  
-.messageInputContainer {
+  .messageInputContainer {
     display: flex;
     gap: 10px;
     padding: 10px;
     border-top: 1px solid #ccc;
-    margin-top: auto;
     background-color: #fff;
-    position: sticky;
+    position: fixed;
     bottom: 0;
+    left: 0;
+    width: 100%;
     z-index: 1;
-  }
+}
