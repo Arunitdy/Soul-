@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Secret Chat</title>
-  <link rel="stylesheet" href="chat.css" />
+  <link rel="stylesheet" href="chat.css">
 </head>
 <body>
-  <!-- Identity Selection Modal -->
-  <div id="identityModal">
+  <h2 id="chatHeader">💬 Secret Chat</h2>
+
+  <!-- Identity Modal -->
+  <div id="identityModal" class="modal">
     <div class="modal-content">
-      <p>Who are you?</p>
+      <h3>Select your identity:</h3>
       <button id="youBtn">You</button>
       <button id="soulmateBtn">Soulmate</button>
     </div>
   </div>
 
-  <!-- Chat Container -->
-  <div class="chat-container">
-    <div class="chat-header" id="chatHeader">💬 Secret Chat</div>
-    <div class="chat-box" id="chatBox"></div>
+  <!-- Chat Box -->
+  <div id="chatBox"></div>
 
-    <div class="chat-input">
-      <input type="text" id="messageInput" placeholder="Type a message..." />
-      <button onclick="sendMessage()">Send</button>
-    </div>
-  </div>
+  <!-- Message Input -->
+  <input type="text" id="messageInput" placeholder="Type a message" />
+  <button onclick="sendMessage()">Send</button>
 
+  <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+  <!-- Firebase Config -->
   <script src="../FireBase/firebaseConfig.js"></script>
+
+  <!-- Chat JS -->
   <script src="chat.js"></script>
 </body>
 </html>

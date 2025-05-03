@@ -16,7 +16,7 @@ if (!secretCode) {
 }
 
 if (!yourName || !otherName) {
-  identityModal.style.display = "flex";
+  identityModal.style.display = "flex"; // Ensure the modal is visible
 
   db.collection("secretCodes")
     .where("secretCode", "==", secretCode)
@@ -30,11 +30,17 @@ if (!yourName || !otherName) {
       }
 
       const data = snapshot.docs[0].data();
-      youBtn.textContent = data.yourName;
-      soulmateBtn.textContent = data.soulmateName;
+      console.log("Fetched data:", data); // Debug log
 
-      youBtn.onclick = () => selectIdentity(data.yourName, data.soulmateName);
-      soulmateBtn.onclick = () => selectIdentity(data.soulmateName, data.yourName);
+      if (data && data.yourName && data.soulmateName) {
+        youBtn.textContent = data.yourName;
+        soulmateBtn.textContent = data.soulmateName;
+
+        youBtn.onclick = () => selectIdentity(data.yourName, data.soulmateName);
+        soulmateBtn.onclick = () => selectIdentity(data.soulmateName, data.yourName);
+      } else {
+        alert("Invalid data in Firestore.");
+      }
     })
     .catch((err) => {
       console.error("Error loading identity:", err);
@@ -51,7 +57,7 @@ function selectIdentity(me, other) {
   localStorage.setItem("yourName", yourName);
   localStorage.setItem("otherName", otherName);
   chatHeader.textContent = `${otherName}`;
-  identityModal.style.display = "none";
+  identityModal.style.display = "none"; // Hide modal after selection
   startChat();
 }
 
