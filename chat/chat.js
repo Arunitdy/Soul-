@@ -17,7 +17,7 @@ if (!secretCode) {
 
 if (!yourName || !otherName) {
   identityModal.style.display = "flex"; // Ensure the modal is visible
-
+  console.log("Identity modal displayed"); // Debug log
   db.collection("secretCodes")
     .where("secretCode", "==", secretCode)
     .limit(1)

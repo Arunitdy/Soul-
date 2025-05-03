@@ -57,7 +57,7 @@ body {
   }
   
   .modal {
-    display: none; /* Hide modal by default */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
