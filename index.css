@@ -26,15 +26,18 @@
     border: .3px solid rgb(110, 107, 107);
     border-radius:10px ;
     font-size: 16px;
-  }
-  .show-code-label {
+  }.show-code-label {
     margin-bottom: 10px;
     display: flex;
+    align-items: center;
     font-size: 15px;
     padding: 5px;
     margin-left: 15px;
     color: rgb(110, 107, 107);
+    gap: 6px; /* spacing between checkbox and label text */
   }
+  
+  
   .forgetCode{
     margin-right: 26%;
   }
@@ -71,3 +74,12 @@
     100% { transform: rotate(360deg); }
   }
   
+  /* Mobile responsiveness */
+  @media (max-width: 480px) {
+    .show-code-label {
+      font-size: 14px;
+      margin-left: 5px;
+      padding: 4px;
+      gap: 4px;
+    }
+  }
