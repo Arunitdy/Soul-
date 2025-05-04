@@ -14,6 +14,12 @@
             <div class="secret-code-container">
                 <h2>Enter Secret Code</h2>
                 <input type="password" id="secretCodeInput" placeholder="Enter code..." />
+                <label  class="show-code-label">
+                    <input type="checkbox" id="showCodeCheckbox" onchange="toggleCodeVisibility()" />
+                    Show code
+                </label>
+                
+                
                 <a href="./code/code.html" class="forgetCode">Forgot code</a>   
                 <button id="saveBtn" onclick="verifyCode()">
                     <span id="saveBtnText">Enter</span> 

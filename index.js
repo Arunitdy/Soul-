@@ -60,3 +60,9 @@ async function verifyCode() {
 function goToCreatePage() {
     window.location.href = "create/create.html";
 }
+
+function toggleCodeVisibility() {
+    const input = document.getElementById("secretCodeInput");
+    const checkbox = document.getElementById("showCodeCheckbox");
+    input.type = checkbox.checked ? "text" : "password";
+}

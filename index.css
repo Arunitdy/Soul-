@@ -2,6 +2,7 @@
   position: absolute;
   top: 7%;
   width: 30vw;
+  z-index: -1;
 }
 .secret-code-container {
     width: 300px;
@@ -18,13 +19,21 @@
     margin-bottom: 20px;
     color:  rgb(110, 107, 107);
   }
-  .secret-code-container input {
+  .secret-code-container #secretCodeInput {
     width: 80%;
     padding: 8px;
     margin: 10px 0;
     border: .3px solid rgb(110, 107, 107);
     border-radius:10px ;
     font-size: 16px;
+  }
+  .show-code-label {
+    margin-bottom: 10px;
+    display: flex;
+    font-size: 15px;
+    padding: 5px;
+    margin-left: 15px;
+    color: rgb(110, 107, 107);
   }
   .forgetCode{
     margin-right: 26%;
