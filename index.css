@@ -19,7 +19,7 @@
     margin-bottom: 20px;
     color:  rgb(110, 107, 107);
   }
-  .secret-code-container #secretCodeInput {
+  .secret-code-container #secretCodeInput, .in {
     width: 80%;
     padding: 8px;
     margin: 10px 0;

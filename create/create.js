@@ -79,3 +79,11 @@ async function createSecretCode() {
 function goBack() {
     window.location.href = "../index.html";
 }
+
+
+
+function toggleCodeVisibility() {
+    const input = document.getElementById("newSecretCode");
+    const checkbox = document.getElementById("showCodeCheckbox");
+    input.type = checkbox.checked ? "text" : "password";
+}
