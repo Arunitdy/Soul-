@@ -1,4 +1,4 @@
-# Soul
+# Soul🩷
 <img src="./img/gui.png" alt="gui img"/>
 
 
