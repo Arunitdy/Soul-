@@ -37,6 +37,9 @@
     gap: 6px; /* spacing between checkbox and label text */
   }
   
+  .show-code-label input[type="checkbox"] {
+    accent-color: #e91e63;
+  }
   
   .forgetCode{
     margin-right: 26%;
