@@ -78,8 +78,12 @@
   @media (max-width: 480px) {
     .show-code-label {
       font-size: 14px;
-      margin-left: 5px;
+      margin-left: 15px;
       padding: 4px;
       gap: 4px;
+    }
+    #showCodeCheckbox{
+      width: 15px;
+      height: 14px;
     }
   }
