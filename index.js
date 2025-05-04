@@ -31,7 +31,7 @@ async function verifyCode() {
 
     // Disable button and show spinner
     saveBtn.disabled = true;
-    saveBtnText.textContent = "Processing...";
+    saveBtnText.textContent = " ";
     saveBtnSpinner.style.display = "inline-block";
 
     try {
