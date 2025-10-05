@@ -73,7 +73,7 @@ function response(event){
        const mailInput = document.createElement("input");
        mailInput.classList.add("mailBox");
        mailInput.type = "text";
-       mailInput.placeholder = "Do you have anything for your boyfriend?";
+       mailInput.placeholder = "?";
        mailDiv.appendChild(mailInput);
 
        // Create and append the send button
