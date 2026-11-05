@@ -6,7 +6,7 @@ const saveBtnText = document.getElementById("saveBtnText");
 const saveBtnSpinner = document.getElementById("saveBtnSpinner");
 
 // Alert for sample code
-alert("Try '1111' as sample code");
+alert("Try '1111' as sample code 🩷🩷");
 
 // Auto-fill secret code input if stored
 window.addEventListener("load", () => {
@@ -31,7 +31,7 @@ async function verifyCode() {
 
     // Disable button and show spinner
     saveBtn.disabled = true;
-    saveBtnText.textContent = "Processing...";
+    saveBtnText.textContent = " ";
     saveBtnSpinner.style.display = "inline-block";
 
     try {
