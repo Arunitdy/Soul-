@@ -25,8 +25,8 @@
 
   <!-- Message Input -->
    <div class="messageInputContainer">
-     <input class = "messageInput" type="text" id="messageInput" placeholder="Type a message" />
-    <button  class=" send" onclick="sendMessage()" onkeydown="if(event.key==='Enter'){sendMessage()}">Send</button>
+     <input class = "messageInput" type="text" id="messageInput" placeholder="Type a message" onkeydown="if(event.key==='Enter'){sendMessage()}" />
+    <button  class=" send" onclick="sendMessage()">Send</button>
    </div>
    
   <!-- Firebase SDK -->
