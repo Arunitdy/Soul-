@@ -51,6 +51,7 @@ async function verifyCode() {
         errorMsg.textContent = "Something went wrong. Try again.";
     } finally {
         // Restore button state
+        
         saveBtn.disabled = false;
         saveBtnText.textContent = "Enter";
         saveBtnSpinner.style.display = "none";

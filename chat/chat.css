@@ -28,11 +28,11 @@ body {
 /* Message bubbles */
 .message {
   padding: 10px;
-  margin: 5px 0;
+  margin: 5px 0px;
   border-radius: 10px;
-  max-width: 85%;
   word-wrap: break-word;
   font-size: 16px;
+  width: fit-content;
 }
 
 .sent {
